@@ -55,15 +55,12 @@ void parse_args(int argc, char* argv[], PingArgs* args) {
             }
             // Convert the argument to a long integer using strtol
             char *endptr;
-            errno = 0; // Reset errno before calling strtol to detect any errors
+            errno = 0;
 
-            // Attempt to convert argument to long integer (base 10)
+            // Attempt to convert argument to long integer
             long temp = strtol(argv[i + 1], &endptr, 10);
 
-            // Check for errors after attempting to convert
-            // 1. Ensure the argument does not cause underflow/overflow for long int
-            // 2. Ensure temp is within the valid TTL range [1 - 255]
-            // 3. Ensure the entire string was a valid number and contains no extra characters
+              // Check for errors (Underflow, Overflow and Invalid number)
             if (errno == ERANGE || temp <= 0 || temp > 255 || *endptr != '\0') {
                 fprintf(stderr, "Error: Invalid TTL value. Must be a number between 1 and 255.\n");
                 exit(EXIT_FAILURE);
