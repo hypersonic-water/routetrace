@@ -41,7 +41,7 @@ Show help message and exit
 
 ##  Examples
 
-```bash
+```
 ./routetrace 8.8.8.8                  # Basic trace
 ./routetrace 192.168.1.1 -m 30 -t 5   # TTL 30, timeout 5s
 ./routetrace 8.8.8.8 -f eth0          # Use eth0 interface
