@@ -8,8 +8,6 @@ void print_help() {
     printf("  -m <max ttl>     Set the maximum TTL (Time-To-Live) for packets (default: 64)\n");
     printf("  -t <timeout>     Response timeout in seconds (default: 2 seconds)\n");
     printf("  -i <interval>    Interval between sending packets in seconds (default: 1 second)\n");
-    printf("  -v               Show detailed packet information (IP & ICMP headers)\n");
-    printf("  -x               Show raw packet information in bytes\n");
     printf("  -h               Display this help menu and exit\n\n");
 }
 
